@@ -1,0 +1,7 @@
+Total tasks 				:3
+Tasks generated using Task manager 	:0
+Tasks completed 			:1
+Tasks not completed 			:2
+Tasks not completed and overdue 	:1
+% Tasks incomplete 			:66.67%
+% Tasks overdue 			:33.33%

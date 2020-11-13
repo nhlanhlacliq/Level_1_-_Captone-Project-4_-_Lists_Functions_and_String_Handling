@@ -1,0 +1,22 @@
+Total users 				:2
+Users Generated with Task manager 	:0
+
+Total tasks assigned to user
+admin 				:2 total tasks
+cliq 				:1 total tasks
+
+Percentage of Total tasks assigned to user
+admin 				:66.67 %
+cliq 				:33.33 %
+
+Percentage of tasks completed by user
+admin 				:50.0 %
+cliq 				:0 %
+
+Percentage of tasks that must still be completed by user
+admin 				:50.0 %
+cliq 				:100.0 %
+
+Percentage of tasks not yet completed and overdue
+admin 				:50.0 %
+cliq 				:0.0 %
