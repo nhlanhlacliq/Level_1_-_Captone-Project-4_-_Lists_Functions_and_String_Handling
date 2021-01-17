@@ -1,6 +1,6 @@
-# Level_1_-_Captone-Project-4_-_Lists_Functions_and_String_Handling
+# Task Manager 2.0
 
-_This program is a more developed version of the previous "Capstone-Project-3" program now using functions_
+_This program is a more developed version of the previous "Task Manager" program now using functions, lists & string handling_
 
 This program adds the following functionality to the existing menu options:
 
