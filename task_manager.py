@@ -16,7 +16,8 @@ report_generated = False
 print("Login")
 print("=============")
 
-"""login function - Takes the user's username and checks if that name is in the user.txt file, 
+"""
+login function - Takes the user's username and checks if that name is in the user.txt file, 
 if so (and the password is correct) the program proceeds to the next menu
 If the user does not exist or the password is incorrect the program asks the user to input their credentials again, until they are correct.
 The user is not made aware of which of their credentials is incorrect as it is a security concern, however, that can be added if needed.
@@ -42,7 +43,8 @@ def try_login():
         print("Username/Password incorrect. Please try again.\n")
         try_login()                             #Should the credentials be incorrect, the user is asked to try again
         
-"""open menu function - only visible once user has logged in. Presents user with menu options 
+"""
+open menu function - only visible once user has logged in. Presents user with menu options 
 and opens the necessary funtions depending on user input.
 If the current user is the admin he has two more menu options.
 """
@@ -79,8 +81,10 @@ def open_menu():
         print("Your input is unrecognized. Please try again.")
         goto_menu()
 
-#register user function, creates a new user (only if you are the admin) and writes the user to the user.txt file
-#Program also checks whether the user to be created already exists, asks the admin to try again with another username if so.
+"""
+register user function, creates a new user (only if you are the admin) and writes the user to the user.txt file
+Program also checks whether the user to be created already exists, asks the admin to try again with another username if so.
+"""
 def register_user():
     if current_user == 'admin':
         new_username = input("Enter new username:\n> ")
@@ -108,7 +112,8 @@ def register_user():
         print("Only the admin is permitted to register new users.")
         goto_menu()
 
-"""Add task function, the program checks if the user(who the task will be added under) exists first and if not, it prompts the user to try again,
+"""
+Add task function, the program checks if the user(who the task will be added under) exists first and if not, it prompts the user to try again,
 if the user does exist, then the program gets the required details for the task and proceeds to write them into the task.txt file
 """
 def add_task():
@@ -134,7 +139,9 @@ def add_task():
         print(f"{task_user} does not exist. Try again")
         add_task()
 
-#view all tasks function - gets and displays all the tasks currently in the task.txt file
+"""
+view all tasks function - gets and displays all the tasks currently in the task.txt file
+"""
 def view_all_tasks():
     print(f"Showing all tasks\n========================")
     with open("tasks.txt", "r") as taskfile:            #Reads the file
@@ -149,7 +156,9 @@ def view_all_tasks():
             print(f"User\t\t:{task_user}\nTitle\t\t:{task_title}\nDescription\t:{task_description}\nDate assigned\t:{task_dateassigned}\nDate due\t:{task_duedate}\nComplete\t:{task_complete}")
     goto_menu()
             
-#view my tasks function checks the current user and displays their relevant tasks from task.txt. 
+"""
+view my tasks function checks the current user and displays their relevant tasks from task.txt. 
+"""
 def view_my_tasks():
     print(f"Showing tasks for {current_user} \n========================")
     task_counter = 1                                        #Task counter to see the task number
@@ -253,7 +262,9 @@ def view_my_tasks():
         print("That task number does not exist. Please try again.")
         view_my_tasks()
 
-#function for creating reports/overview of the tasks and users
+"""
+function for creating reports/overview of the tasks and users
+"""
 def generate_reports():
     #Task reports
     total_tasks = 0                 #Initializing counters and empty strings to be used later in the code.
@@ -380,7 +391,9 @@ def generate_reports():
     goto_menu()
 
 
-#view statistics function, displays data from the generated report files form above 
+"""
+view statistics function, displays data from the generated report files form above 
+"""
 def view_statistics():
     if os.path.exists("task_overview.txt"): #check if generated files exist first then read and display the content
         with open("task_overview.txt", "r") as task_report:
@@ -396,13 +409,17 @@ def view_statistics():
 
     goto_menu()
 
-#go to menu function created to allow the user to go back to the main menu when they are ready to, using an empty input to confirm
+"""
+go to menu function created to allow the user to go back to the main menu when they are ready to, using an empty input to confirm
+"""
 def goto_menu():
     input("\n(Press Enter to go back.)")
     open_menu()
 
-"""Check if user exists function for when a new user is being created, or a task is being created for a user,
-takes the username as an argument and returns whether that user exists or not."""
+"""
+Check if user exists function for when a new user is being created, or a task is being created for a user,
+takes the username as an argument and returns whether that user exists or not.
+"""
 def check_user_exists(username):
     global user_exists
     user_exists = False
@@ -422,6 +439,8 @@ def open_task():
     else:
         return task_number
 
-#After defining functions, program can now run, calling the login function to begin.
+"""
+After defining functions, program can now run, calling the login function to begin.
+"""
 try_login()
 
